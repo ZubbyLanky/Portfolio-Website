@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@reference "tailwindcss/utilities";
+
+/* ---- Base -------------------------------------------------- */
+:root, html, body, #root { height: 100%; }
+
+body {
+  /* higher contrast base text + dark mode */
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased;
+}
+
+/* ---- Reusable utilities ----------------------------------- */
+@utility container-main { @apply max-w-6xl mx-auto px-4; }
+
+/* Buttons with strong contrast */
+@utility btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl
+         bg-blue-600 text-white px-5 py-3 font-medium
+         shadow hover:bg-blue-700 active:bg-blue-800 transition;
+}
+
+@utility btn-outline {
+  @apply inline-flex items-center justify-center rounded-xl
+         border border-slate-300 text-slate-900
+         px-5 py-3 font-medium bg-white hover:bg-slate-50
+         dark:border-slate-700 dark:text-slate-100 dark:bg-slate-900 dark:hover:bg-slate-800 transition;
+}
+
+/* Cards & chips with clearer borders */
+@utility card {
+  @apply bg-white dark:bg-slate-900 rounded-2xl
+         border border-slate-200 dark:border-slate-800
+         shadow-[0_8px_30px_rgba(0,0,0,0.06)];
+}
+
+@utility chip {
+  @apply text-sm bg-blue-100 text-blue-800
+         dark:bg-blue-900/40 dark:text-blue-200
+         border border-blue-200 dark:border-blue-800
+         rounded-full px-3 py-1 shadow-sm;
+}
